@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.IO;
 using Newtonsoft.Json;
 
 namespace Comp229_Assign04
@@ -12,8 +9,8 @@ namespace Comp229_Assign04
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			GameModel a = JsonConvert.DeserializeObject<GameModel>("{ name: \"asdf\"}");
-			LabelModels.Text = a.Name;
+			var a = JsonConvert.DeserializeObject<List<GameModel>>(File.ReadAllText(MapPath("Assign04.json")));
+			LabelModels.Text = JsonConvert.SerializeObject(a, Formatting.Indented);
 		}
 	}
 }
