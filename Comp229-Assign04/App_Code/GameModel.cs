@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Comp229_Assign04
 {
@@ -19,5 +21,23 @@ namespace Comp229_Assign04
 		public int Wounds { get; set; }
 		public List<GameAction> Actions { get; set; }
 		public List<GameSpecialAbility> SpecialAbilities { get; set; }
-	}
+		public string ImageUrl { get; set; }
+
+
+		public static List<GameModel> AllGameModels { get; set; }
+
+
+		public static void ReadAllGameModels(string pathToJson)
+		{
+			AllGameModels = JsonConvert.DeserializeObject<List<GameModel>>(File.ReadAllText(pathToJson));
+		}
+
+        public static void WriteAllGameModels(string pathToJson)
+        {
+            string textFile = JsonConvert.SerializeObject(AllGameModels);
+
+            File.WriteAllText(pathToJson, textFile);
+        }
+
+    }
 }
