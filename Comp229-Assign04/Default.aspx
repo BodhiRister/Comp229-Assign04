@@ -42,5 +42,15 @@
 		    <br />
 		</div>
 	</form>
+        <hr/>
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Comp229-Assign04 Rister#300833150</p>
+            </footer>
+        </div>
+
+
+     <hr/>
+
+
 </body>
 </html>
