@@ -43,7 +43,7 @@ namespace Comp229_Assign04
                 message.To.Add(toAddress);
                 message.Subject = "Game Email Subscribtion";
                 message.Body = "Welcome to the game world";
-                Attachment jsonFile = new Attachment(MapPath("Assign04.json");
+                Attachment jsonFile = new Attachment(MapPath("Assign04.json"));
                 message.Attachments.Add(jsonFile);
                 smtpClient.Host = "smtp-mail.outlook.com";
                 smtpClient.Port = 587;

@@ -8,6 +8,13 @@
 </head>
 <body>
 	<form id="form1" runat="server">
+
+
+<h1>
+    Wrath of Khan
+</h1>
+        <img src="Image/images.jpg" />
+
 		<div>
 			<br />
 			<asp:GridView ID="GridViewAllGameModels" runat="server" DataSourceID="DataSourceGameModels" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridViewAllGameModels_OnSelectedIndexChanged">
@@ -32,6 +39,7 @@
             <asp:TextBox ID="txtEmailAddress" runat="server" />
             <asp:Button ID="btnEmailMe" runat="server" OnClick="btnEmailMe_Click" Text="Send Email" />
             <asp:Label ID="statusLabel" runat="server" />
+		    <br />
 		</div>
 	</form>
 </body>
